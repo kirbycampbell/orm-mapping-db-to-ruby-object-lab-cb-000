@@ -72,7 +72,7 @@ class Student
       LIMIT 1
     SQL
 
-    DB[:conn].execute(sql).each do |row|
+    DB[:conn].execute(sql).send do |row|
       self.new_from_db(row)
     end
   end
